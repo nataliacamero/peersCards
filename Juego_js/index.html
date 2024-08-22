@@ -55,13 +55,54 @@
       }
       .score-container {
         display: flex;
-        align-items: center;
+        align-items: end;
         font-size: 24px;
       }
 
       .score-box {
         width: 40px;
-        height: 40px;
+        height: 30px;
+        border: 2px solid #0066cc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        font-size: 18px;
+        margin-bottom: 32px;
+      }
+
+      .wrong-box {
+        width: 40px;
+        height: 30px;
+        border-width: 2px 2px 2px 0px;
+        border-style: solid;
+        border-color: #0066cc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        margin-bottom: 32px;
+      }
+
+      .headerWrapp {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+      }
+
+      .clockWrapp {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 32px;
+      }
+
+      .timer-box {
+        width: 80px;
+        height: 30px;
         border: 2px solid #0066cc;
         display: flex;
         justify-content: center;
@@ -69,55 +110,127 @@
         margin-left: 10px;
         font-size: 18px;
       }
+
+      .bigWrapper {
+        width: 37%;
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
   </head>
   <body>
-    <div class="score-container">
-      <div>Score:</div>
-      <div id="score-box" class="score-box">0</div>
-    </div>
-    <div class="grid">
-      <div class="grid-item" onclick="selectImage(0)">
-        <img src="images\imagen01.png" alt="Imagen 1" />
+    <div class="bigWrapper">
+      <div class="headerWrapp">
+        <div class="clockWrapp">
+          <img src="images\cronometro.png" alt="Imagen 1" />
+          <div id="timer" class="timer-box">0</div>
+        </div>
+        <div class="score-container">
+          <div id="score-box" class="score-box">0</div>
+          <div id="wrong-box" class="wrong-box">0</div>
+        </div>
       </div>
-      <div class="grid-item" onclick="selectImage(1)">
-        <img src="images\imagen02.png" alt="Imagen 2" />
-      </div>
-      <div class="grid-item" onclick="selectImage(2)">
-        <img src="images/imagen03.png" alt="Imagen 3" />
-      </div>
-      <div class="grid-item" onclick="selectImage(3)">
-        <img src="images\imagen04.png" alt="Imagen 4" />
-      </div>
-      <div class="grid-item" onclick="selectImage(4)">
-        <img src="images\imagen05.png" alt="Imagen 5" />
-      </div>
-      <div class="grid-item" onclick="selectImage(5)">
-        <img src="images\imagen06.png" alt="Imagen 6" />
-      </div>
-      <div class="grid-item" onclick="selectImage(6)">
-        <img src="images\imagen01.png" alt="Imagen 7" />
-      </div>
-      <div class="grid-item" onclick="selectImage(7)">
-        <img src="images\imagen05.png" alt="Imagen 8" />
-      </div>
-      <div class="grid-item" onclick="selectImage(8)">
-        <img src="images\imagen02.png" alt="Imagen 9" />
-      </div>
-      <div class="grid-item" onclick="selectImage(9)">
-        <img src="images\imagen06.png" alt="Imagen 10" />
-      </div>
-      <div class="grid-item" onclick="selectImage(10)">
-        <img src="images\imagen04.png" alt="Imagen 11" />
-      </div>
-      <div class="grid-item" onclick="selectImage(11)">
-        <img src="images/imagen03.png" alt="Imagen 12" />
+
+      <div class="grid">
+        <div class="grid-item" onclick="selectImage(0)">
+          <img src="images\imagen01.png" alt="Imagen 1" />
+        </div>
+        <div class="grid-item" onclick="selectImage(1)">
+          <img src="images\imagen02.png" alt="Imagen 2" />
+        </div>
+        <div class="grid-item" onclick="selectImage(2)">
+          <img src="images/imagen03.png" alt="Imagen 3" />
+        </div>
+        <div class="grid-item" onclick="selectImage(3)">
+          <img src="images\imagen04.png" alt="Imagen 4" />
+        </div>
+        <div class="grid-item" onclick="selectImage(4)">
+          <img src="images\imagen05.png" alt="Imagen 5" />
+        </div>
+        <div class="grid-item" onclick="selectImage(5)">
+          <img src="images\imagen06.png" alt="Imagen 6" />
+        </div>
+        <div class="grid-item" onclick="selectImage(6)">
+          <img src="images\imagen01.png" alt="Imagen 7" />
+        </div>
+        <div class="grid-item" onclick="selectImage(7)">
+          <img src="images\imagen05.png" alt="Imagen 8" />
+        </div>
+        <div class="grid-item" onclick="selectImage(8)">
+          <img src="images\imagen02.png" alt="Imagen 9" />
+        </div>
+        <div class="grid-item" onclick="selectImage(9)">
+          <img src="images\imagen06.png" alt="Imagen 10" />
+        </div>
+        <div class="grid-item" onclick="selectImage(10)">
+          <img src="images\imagen04.png" alt="Imagen 11" />
+        </div>
+        <div class="grid-item" onclick="selectImage(11)">
+          <img src="images/imagen03.png" alt="Imagen 12" />
+        </div>
       </div>
     </div>
 
     <script>
+      // Lista de todas las imágenes disponibles
+      const allImages = [
+        "images/imagen01.png",
+        "images/imagen02.png",
+        "images/imagen03.png",
+        "images/imagen04.png",
+        "images/imagen05.png",
+        "images/imagen06.png",
+        "images/imagen07.png",
+        "images/imagen08.png",
+        "images/imagen09.png",
+        "images/imagen10.png",
+        "images/imagen11.png",
+        "images/imagen12.png",
+        "images/imagen13.png",
+        "images/imagen14.png",
+        "images/imagen15.png",
+        "images/imagen16.png",
+        "images/imagen17.png",
+        "images/imagen18.png",
+        "images/imagen19.png",
+        "images/imagen20.png",
+      ];
+
+      // Función para obtener 6 imágenes aleatorias
+      function getRandomImages() {
+        const shuffledImages = allImages.sort(() => 0.5 - Math.random());
+        return shuffledImages.slice(0, 6);
+      }
+
+      // Función para mezclar un array (Fisher-Yates Shuffle)
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      // Inicializa el juego
+      function initGame() {
+        const gridItems = document.querySelectorAll(".grid-item img");
+        let selectedImages = getRandomImages();
+        selectedImages = selectedImages.concat(selectedImages); // Duplica las imágenes
+        selectedImages = shuffleArray(selectedImages); // Mezcla las imágenes
+
+        // Asigna las imágenes mezcladas a los elementos de la cuadrícula
+        gridItems.forEach((img, index) => {
+          img.src = selectedImages[index];
+        });
+      }
+
+      // El resto de tu código (función selectImage e isMatch) permanece igual
       let selectedItems = [];
       let score = 0;
+      let wrong = 0;
 
       function selectImage(index) {
         const items = document.querySelectorAll(".grid-item");
@@ -138,6 +251,8 @@
             selectedItems = [];
           } else {
             // Si no es un match, ocultar después de 1 segundo
+            wrong++;
+            document.getElementById("wrong-box").textContent = wrong;
             setTimeout(() => {
               selectedItems.forEach((i) => items[i].classList.remove("show"));
               selectedItems = [];
@@ -152,6 +267,36 @@
         const secondImg = document.querySelectorAll(".grid-item img")[second].src;
         return firstImg === secondImg;
       }
+      // Tiempo inicial en segundos (1 minuto = 60 segundos)
+      let timeLeft = 60;
+
+      // Función para formatear el tiempo en minutos y segundos
+      function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
+      }
+
+      // Actualiza el temporizador en el HTML
+      function updateTimer() {
+        const timerElement = document.getElementById("timer");
+        timerElement.textContent = formatTime(timeLeft);
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          timerElement.textContent = "Tiempo terminado";
+        } else {
+          timeLeft--;
+        }
+      }
+
+      // Actualiza el temporizador cada segundo
+      const timerInterval = setInterval(updateTimer, 1000);
+
+      // Inicializa el temporizador
+      updateTimer();
+
+      // Llama a initGame al cargar la página
+      window.onload = initGame;
     </script>
   </body>
 </html>
