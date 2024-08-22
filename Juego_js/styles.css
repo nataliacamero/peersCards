@@ -1,0 +1,164 @@
+/* Estilos básicos */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.game-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.game-title {
+  font-size: 24px;
+  color: #333;
+}
+
+.scoreboard {
+  display: flex;
+  align-items: center;
+}
+
+.score-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.score-item:last-child {
+  margin-right: 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.xIcon {
+  width: 10px;
+  height: 14px;
+  margin-right: 8px;
+}
+
+#timer,
+#aciertos,
+#desaciertos {
+  font-size: 16px;
+  color: #555;
+}
+
+.game-board {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 24px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+td.letter {
+  background-color: #f4f4f4;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+td.letter:hover {
+  background-color: #e0e0e0;
+}
+
+.game-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos Responsive */
+@media (max-width: 768px) {
+  .game-header,
+  .game-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scoreboard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .score-item {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .score-item:last-child {
+    margin-bottom: 0;
+  }
+
+  td {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-container {
+    padding: 10px;
+  }
+
+  .game-title {
+    font-size: 20px;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .btn:last-child {
+    margin-bottom: 0;
+  }
+
+  td {
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+  }
+}
